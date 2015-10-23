@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Chimer</string>
+    <string name="quiet_time_end">quiet_time_end</string>
+    <string name="quiet_time_start">quiet_time_start</string>
+    <string name="quiet_time_start_title">Select Quiet Time Start</string>
+    <string name="quiet_time_end_title">Select Quiet Time End</string>
+    <string name="alarm_tone">alarm_tone</string>
+    <string name="alarm_run_switch">alarm_run_switch</string>
+    <string name="alarm_summary_on">Alarm Running</string>
+    <string name="alarm_summary_off">Alarm Off</string>
+    <string name="ringtone_title">Select Notification Tone</string>
+</resources>

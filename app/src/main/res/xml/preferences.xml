@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:key="@string/alarm_run_switch"
+        android:summaryOn="@string/alarm_summary_on"
+        android:summaryOff="@string/alarm_summary_off"
+        android:defaultValue="false"
+    />
+    <RingtonePreference
+        android:key="@string/alarm_tone"
+        android:ringtoneType="notification"
+        android:showDefault="true"
+        android:showSilent="true"
+        android:title="@string/ringtone_title"
+    />
+    <com.davidbarron.chimer.TimePreference
+        android:key="@string/quiet_time_start"
+        android:title="@string/quiet_time_start_title"
+        android:defaultValue="@integer/default_start_hour"/>
+    <com.davidbarron.chimer.TimePreference
+        android:key="@string/quiet_time_end"
+        android:title="@string/quiet_time_end_title"
+        android:defaultValue="@integer/default_end_hour"/>
+</PreferenceScreen>
