@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.widget.Toast;
@@ -31,6 +32,11 @@ public class ChimerAlarmReceiver extends BroadcastReceiver {
             }
             Ringtone ringtone = RingtoneManager.getRingtone(context, alert);
             ringtone.play();
+            boolean vibrate = sharedPreferences.getBoolean(context.getResources().getString(R.string.alarm_vibrate_switch), false);
+            if(vibrate) {
+                Vibrator vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
+                vibrator.vibrate((long) context.getResources().getInteger(R.integer.vibrate_time));
+            }
             int quietTimeStart = sharedPreferences.getInt(context.getResources().getString(R.string.quiet_time_start), context.getResources().getInteger(R.integer.default_start_hour));
             int quietTimeEnd = sharedPreferences.getInt(context.getResources().getString(R.string.quiet_time_end), context.getResources().getInteger(R.integer.default_end_hour));
             AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);

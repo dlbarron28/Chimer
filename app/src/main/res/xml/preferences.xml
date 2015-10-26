@@ -7,6 +7,12 @@
         android:summaryOff="@string/alarm_summary_off"
         android:defaultValue="false"
     />
+    <SwitchPreference
+        android:key="@string/alarm_vibrate_switch"
+        android:summaryOn="@string/alarm_vibrate_on"
+        android:summaryOff="@string/alarm_vibrate_off"
+        android:defaultValue="false"
+    />
     <RingtonePreference
         android:key="@string/alarm_tone"
         android:ringtoneType="notification"

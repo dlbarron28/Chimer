@@ -2,4 +2,5 @@
 <resources>
     <integer name="default_start_hour">21</integer>
     <integer name="default_end_hour">7</integer>
+    <integer name="vibrate_time">1000</integer>
 </resources>

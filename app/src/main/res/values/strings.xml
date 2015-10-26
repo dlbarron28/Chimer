@@ -9,4 +9,7 @@
     <string name="alarm_summary_on">Alarm Running</string>
     <string name="alarm_summary_off">Alarm Off</string>
     <string name="ringtone_title">Select Notification Tone</string>
+    <string name="alarm_vibrate_switch">alarm_vibrate_switch</string>
+    <string name="alarm_vibrate_on">Vibrate On</string>
+    <string name="alarm_vibrate_off">Vibrate Off</string>
 </resources>
