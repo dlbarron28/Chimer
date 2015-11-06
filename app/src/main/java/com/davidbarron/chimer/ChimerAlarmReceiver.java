@@ -18,7 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class ChimerAlarmReceiver extends BroadcastReceiver {
-
+    Ringtone ringtone;
     @Override
     public void onReceive(Context context, Intent intent) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -30,8 +30,14 @@ public class ChimerAlarmReceiver extends BroadcastReceiver {
             if (alert == null) {
                 alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             }
-            Ringtone ringtone = RingtoneManager.getRingtone(context, alert);
-            ringtone.play();
+            ringtone = RingtoneManager.getRingtone(context, alert);
+            if(ringtone != null) {
+                new Thread(new Runnable() {
+                    public void run() {
+                        ringtone.play();
+                    }
+                }).start();
+            }
             boolean vibrate = sharedPreferences.getBoolean(context.getResources().getString(R.string.alarm_vibrate_switch), false);
             if(vibrate) {
                 Vibrator vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
